@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "test": "jest --runInBand",
+    "test:cov": "jest --coverage --runInBand",
     "start": "node src/index.js",
     "dev": "nodemon src/index.js"
   },
