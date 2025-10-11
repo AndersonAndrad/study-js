@@ -1,5 +1,5 @@
 export default {
-  transform: {},
+  transform: { '^.+\\.jsx?$': 'babel-jest' },
   testEnvironment: 'node',
-  testMatch: ['**/tests/**/*.spec.js', 'src/**/*.spec.js'],
+  testMatch: ['**/tests/**/*.spec.js'],
 };
