@@ -22,7 +22,23 @@ describe(App.name, () => {
     });
 
     app.startServer();
-    
+
     expect(listenSpy).toHaveBeenCalledWith(3000, expect.any(Function));
   });
+
+  it('should set up middleware', () => {
+    const useSpy = jest.spyOn(app.expressApp, 'use');
+
+    app.setMiddlewares();
+
+    expect(useSpy).toHaveBeenCalled();
+  });
+
+  it('should set up users routes', () => {
+    const useSpy = jest.spyOn(app.expressApp, 'use');
+
+    app.setRoutes();
+
+    expect(useSpy).toHaveBeenCalledWith('/users', expect.anything());
+  })
 })
